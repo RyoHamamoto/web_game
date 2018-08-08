@@ -1,2 +1,42 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<canvas id="world"></canvas>
+
+<script>
+// main
+tm.main(function() {
+    // alert("今チェック中");
+    // キャンバスアプリケーションを生成
+    var app = tm.display.CanvasApp("#world");
+    // リサイズ
+    app.resize(640, 960);
+    // ウィンドウにフィットさせる
+    app.fitWindow();
+
+    // スターを生成
+    var star = tm.display.StarShape().addChildTo(app.currentScene);
+    // 真ん中にセット    
+    star.setPosition(320, 480);
+
+    // ラベル
+    var label = tm.display.Label("touch me!").addChildTo(app.currentScene);
+    // 位置指定
+    label.setPosition(320, 880);
+    
+    // 更新処理
+    app.currentScene.update = function(app) {
+        // クルクル回す
+        star.rotation += 16;
+        
+        // タッチした位置に移動させる
+        var pointing = app.pointing;
+        // タッチしているかを判定
+        if (pointing.getPointing()) {
+            // タッチした位置に徐々に近づける
+            star.x += (pointing.x-star.x)*0.1;
+            star.y += (pointing.y-star.y)*0.1;
+        }
+    };
+    
+    // 実行
+    app.run();
+});
+</script>

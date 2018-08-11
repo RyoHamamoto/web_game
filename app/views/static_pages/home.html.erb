@@ -3,15 +3,10 @@
 <!-- ここにWebエディタが表示される -->
 <!--<div id="gjs"></div>-->
 
-<div id="editor" style="height: 600px"></div>
+<!-- ブラウザエディタの設定 -->
+<div id="editor" style="height:400px; width:800px; position:relative; top:330px; left:110px; z-index:1;"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>
 <script>
-// var editor = grapesjs.init({
-//   container : '#gjs',
-//   components: '<h1 class="text-red">こんにちは！GrapesJS...</h1>',
-//   style: '.text-red{ color: red }',
-// });
-
 var editor = ace.edit("editor");
     editor.setTheme("ace/theme/monokai");
     editor.setFontSize(14);
@@ -30,6 +25,15 @@ var editor = ace.edit("editor");
     //     onSaveFile();
     //   }
     // });
+</script>
+
+<!-- ゲーム画面の設定 -->
+<script>
+// var editor = grapesjs.init({
+//   container : '#gjs',
+//   components: '<h1 class="text-red">こんにちは！GrapesJS...</h1>',
+//   style: '.text-red{ color: red }',
+// });
     
 // グローバルに展開
 phina.globalize();

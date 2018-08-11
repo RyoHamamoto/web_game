@@ -15,9 +15,21 @@
 var editor = ace.edit("editor");
     editor.setTheme("ace/theme/monokai");
     editor.setFontSize(14);
-    editor.getSession().setMode("ace/mode/html");
+    editor.getSession().setMode("ace/mode/ruby");
     editor.getSession().setUseWrapMode(true);
     editor.getSession().setTabSize(2);
+    
+    // "Ctrl-Sで保存できるように設定"
+    // editor.commands.addCommand(
+    //   Name : "savefile",
+    //   bindKey: {
+    //     win : "Ctrl-S",
+    //     mac : "Command-S"
+    //   },
+    //   exec: function(editor) {
+    //     onSaveFile();
+    //   }
+    // });
     
 // グローバルに展開
 phina.globalize();

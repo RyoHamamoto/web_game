@@ -1,10 +1,13 @@
+<!-- レイアウト用にからボックス生成  -->
+<div class="box1">ゲーム</div>
+
 <!--<canvas id="world"></canvas>-->
 
 <!-- ここにWebエディタが表示される -->
 <!--<div id="gjs"></div>-->
 
 <!-- ブラウザエディタの設定 -->
-<div id="editor" style="height:400px; width:800px; position:relative; top:330px; left:110px; z-index:1;"></div>
+<div id="editor"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>
 <script>
 var editor = ace.edit("editor");
@@ -27,14 +30,13 @@ var editor = ace.edit("editor");
     // });
 </script>
 
+<!-- 課題詳細テキストの設定 -->
+<div class="question_text">
+  <p>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+</div>
+
 <!-- ゲーム画面の設定 -->
 <script>
-// var editor = grapesjs.init({
-//   container : '#gjs',
-//   components: '<h1 class="text-red">こんにちは！GrapesJS...</h1>',
-//   style: '.text-red{ color: red }',
-// });
-    
 // グローバルに展開
 phina.globalize();
 

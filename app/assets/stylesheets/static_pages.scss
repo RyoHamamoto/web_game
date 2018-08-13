@@ -11,31 +11,26 @@
 
 .box1 {
   background-color: red;
-  // border: solid 8px red;
   box-sizing: border-box;
-
-  // text-align: center;
   line-height: 262px;
+  // border: solid 8px red;
+  // text-align: center;
   // font-weight: bold;
   // font-size: 60px;
 }
 
 #editor {
   height:310px;
-  // position:relative;
-  // top:330px;
-  // left:110px;
-  // width: 70%;  /** 横幅70% **/
+  position:relative;
   float: left;
   width: 70%;  /** 横幅50% **/
   z-index:1;
 }
 
 .question_text {
-  height:310px;
   background-color: yellow;
-  // float: left;
-  // width: 20%;  /** 横幅30% **/
+  height:310px;
+  position:relative;
   float: left;
   width: 30%;  /** 横幅50% **/
   z-index:2;

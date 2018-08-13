@@ -9,10 +9,11 @@
 //   font-family: 'Lucida Grande','Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
 // }
 
-.box1 {
-  background-color: red;
-  box-sizing: border-box;
-  line-height: 262px;
+.game_area {
+  // background-color: red;
+  // box-sizing: border-box;
+  height:262px;
+  // line-height: 262px;
   // border: solid 8px red;
   // text-align: center;
   // font-weight: bold;
@@ -28,7 +29,6 @@
 }
 
 .question_text {
-  background-color: yellow;
   height:310px;
   position:relative;
   float: left;

@@ -1,6 +1,52 @@
 <!-- ゲーム画面の設定 -->
 <!-- ゲームエリア用に空ボックス生成  -->
-<div class="game_area"></div>
+<div class="game_area">
+  <input class="button_onclick" type="button" value="実行">
+</div>
+
+<!-- スクリプト実行ボタン -->
+<script>
+// $("input.button_onclick").click(function(){
+//       $.ajax({
+//             url: "static_pages/test",
+//             type: "get",
+//             data: {result:true
+//                     },
+//             dataType: "html",
+//             success: function(data) {
+//                 alert("success");
+//             },
+//             error: function(data) {
+//                 alert("errror");
+//             }
+//         });
+//     });
+
+(function() {
+  $(function() {
+    return $("input.button_onclick").click(function() {
+      return $.ajax({
+        url: 'static_pages/test',
+        type: "GET",
+        dataType: 'json',
+        async: true
+      }).done(function(response) {
+        var i, j, ref, results;
+        $("#user").append("<tr><th>名前</th><th>年齢</th></tr>");
+        results = [];
+        for (i = j = 0, ref = response.length; 0 <= ref ? j <= ref : j >= ref; i = 0 <= ref ? ++j : --j) {
+          results.push($("#user").append("<tr><td>" + response[i].name + "</td><td>" + response[i].age + "</td></tr>"));
+        }
+        return results;
+      }).fail(function(response) {
+        return alert('fail');
+      });
+    });
+  });
+
+}).call(this);
+</script>
+
 <script>
 // グローバルに展開
 phina.globalize();
